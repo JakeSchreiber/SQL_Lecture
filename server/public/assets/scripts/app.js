@@ -48,6 +48,8 @@ function addSomeone(){
 function deletePerson(){
    var deletedId = {"id" : $(this).data("id")};
 
+   //"name" : req.body.peopleAdd
+
    console.log("Meaningful Log: ", deletedId);
 
    $.ajax({
@@ -68,8 +70,11 @@ function updateDOM(data){
       var el = "<div class='well col-md-3'>" +
                   "<p>" + data[i].name + "</p>" +
                   "<p>" + data[i].location + "</p>" +
+                   "<p>" + data[i].age + "</p>" +
+                    "<p>" + data[i].spiritanimal + "</p>" +
+          "<p>" + data[i].address + "</p>" +
                   "<button class='delete btn btn-danger' data-id='" +
-                     data[i]._id + "'>Delete</button>" +
+                     data[i].id + "'>Delete</button>" +
                "</div>";
 
       $("#peopleContainer").append(el);
